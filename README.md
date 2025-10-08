@@ -1,62 +1,84 @@
-# Express.js RESTful API Assignment
+🚀 Express.js Product API
+A professional RESTful API for product management with full CRUD operations and authentication.
 
-This assignment focuses on building a RESTful API using Express.js, implementing proper routing, middleware, and error handling.
+📋 Features
+CRUD Operations - Create, read, update, delete products
 
-## Assignment Overview
+Authentication - API key protection
 
-You will:
-1. Set up an Express.js server
-2. Create RESTful API routes for a product resource
-3. Implement custom middleware for logging, authentication, and validation
-4. Add comprehensive error handling
-5. Develop advanced features like filtering, pagination, and search
+Validation - Input validation middleware
 
-## Getting Started
+Error Handling - Comprehensive error management
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install dependencies:
-   ```
-   npm install
-   ```
-4. Run the server:
-   ```
-   npm start
-   ```
+Search & Filter - Advanced query capabilities
 
-## Files Included
+Pagination - Efficient data browsing
 
-- `Week2-Assignment.md`: Detailed assignment instructions
-- `server.js`: Starter Express.js server file
-- `.env.example`: Example environment variables file
+Statistics - Product analytics
 
-## Requirements
+🛠️ Installation
+bash
+# Clone repository
+git clone https://github.com/kimenjuivy/express-js-server-side-framework-kimenjuivy.git
 
-- Node.js (v18 or higher)
-- npm or yarn
-- Postman, Insomnia, or curl for API testing
+# Navigate to project
+cd express-js-server-side-framework-kimenjuivy
 
-## API Endpoints
+# Install dependencies
+npm install
 
-The API will have the following endpoints:
+# Create environment file
+echo "PORT=3000" > .env
+echo "API_KEY=mysecretkey123" >> .env
 
-- `GET /api/products`: Get all products
-- `GET /api/products/:id`: Get a specific product
-- `POST /api/products`: Create a new product
-- `PUT /api/products/:id`: Update a product
-- `DELETE /api/products/:id`: Delete a product
+# Start development server
+npm run dev
+🔑 Authentication
+All API requests require this header:
 
-## Submission
+http
+x-api-key: mysecretkey123
+📚 API Endpoints
+Products
+Method	Endpoint	Description
+GET	/api/products	List all products
+GET	/api/products/:id	Get single product
+POST	/api/products	Create new product
+PUT	/api/products/:id	Update product
+DELETE	/api/products/:id	Delete product
+Statistics
+Method	Endpoint	Description
+GET	/api/stats	Overall statistics
+GET	/api/stats/category/:category	Category stats
+🧪 Quick Testing
+bash
+# Test authentication
+curl -H "x-api-key: mysecretkey123" http://localhost:3000/api/products
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+# Create a product
+curl -X POST -H "x-api-key: mysecretkey123" \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Laptop","description":"High-performance laptop","price":1200,"category":"electronics"}' \
+  http://localhost:3000/api/products
+📁 Project Structure
+text
+├── server.js          # Main server file
+├── middleware/        # Custom middleware
+├── routes/           # API route handlers
+├── .env             # Environment variables
+└── package.json     # Dependencies
+Server runs at: http://localhost:3000
 
-1. Complete all the required API endpoints
-2. Implement the middleware and error handling
-3. Document your API in the README.md
-4. Include examples of requests and responses
+🎯 Assignment Coverage
+✅ Express.js setup
 
-## Resources
+✅ RESTful API routes
 
-- [Express.js Documentation](https://expressjs.com/)
-- [RESTful API Design Best Practices](https://restfulapi.net/)
-- [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) 
+✅ Middleware implementation
+
+✅ Error handling
+
+✅ Advanced features
+
+Ready to use! 🚀
+
